@@ -53,6 +53,85 @@ const socialItems = [
   },
 ];
 
+const projectCards = [
+  {
+    title: "Chatify",
+    period: "Jan 2026 - Feb 2026",
+    href: "https://chatify-7o49d.sevalla.app/login",
+    githubHref: "https://github.com/manishchh/chatify",
+    description:
+      "Built Chatify as a personal MERN-stack project to better understand how real-time messaging systems and authentication work in practice. Developed the web socket functionality from scratch using Socket.IO, implemented authentication with JWT and bcrypt, and added rate limiting and bot detection to improve security. Also tested and validated API endpoints with Postman to ensure the application worked reliably.",
+    tags: [
+      "MERN Stack",
+      "Zustand",
+      "Tailwind CSS",
+      "JWT Authentication",
+      "Bcrypt",
+      "Arcjet",
+    ],
+    imageSrc: "/chatify.jpg",
+    imageAlt: "Chatify project preview",
+  },
+  {
+    title: "COVID-19 Data Analysis & Forecasting Dashboard",
+    period: "Apr 2025",
+    githubHref: "https://github.com/manishchh/covid19-data-analysis",
+    description:
+      "Developed a reusable data pipeline to scrape, clean, and prepare publicly available data, then analysed state-level trends using population-adjusted comparisons and regression modelling. Presented insights through an interactive Shiny dashboard and an accompanying written report to communicate findings clearly and effectively.",
+    tags: [
+      "R", 
+      "rvest", 
+      "tidyverse", 
+      "Shiny",
+    ],
+    imageSrc: "/covid19.jpg",
+    imageAlt: "COVID-19 dashboard preview",
+  },
+  {
+    title: "Patient Vital Management System",
+    period: "May 2024",
+    githubHref: "https://github.com/manishchh/PatientVitalSystem",
+    description:
+      "Built this university project in C++ to explore how design patterns improve software flexibility and maintainability. Developed a patient vitals management system to record health measurements, assess alert levels, and trigger notifications for high-risk patients. Also packaged the system as a runnable .exe application for direct testing.",
+    tags: [
+      "C++", 
+      "Design Patterns",
+    ],
+    imageSrc: "/C++.png",
+    imageAlt: "Patient vital system preview",
+  },
+  {
+    title: "Country Emission",
+    period: "Oct 2023",
+    githubHref: "https://github.com/manishchh/CountryEmissons-ASP.NET_MVC",
+    description:
+      "Created this university project to strengthen my understanding of database-backed web applications using ASP.NET Core MVC. Developed a web application to manage and display country emissions data using Entity Framework and SQL Server, while improving query performance and designing a responsive interface.",
+    tags: [
+      "ASP.NET Core MVC", 
+      "C#",
+      "Entity Framework", 
+      "SQL Server", 
+      "CRUD Operations",
+    ],
+    imageSrc: "/cemmison.png",
+    imageAlt: "Country emission project preview",
+  },
+  {
+    title: "EcoSim-GameSimulator",
+    period: "Sep 2021",
+    githubHref: "https://github.com/manishchh/EcoSim-GameSimulator",
+    description:
+      "An object-oriented Python project simulating a dynamic predator-prey ecosystem with graphical visualization. It demonstrates core OOP principles including inheritance, encapsulation, polymorphism, and exception handling, all built on a custom game engine using Python and Tkinter.",
+    tags: [
+      "Python", 
+      "tkinter", 
+      "OOP",
+    ],
+    imageSrc: "/ecosim.jpg",
+    imageAlt: "EcoSim project preview",
+  },
+];
+
 function GithubIcon() {
   return (
     <svg
@@ -260,8 +339,88 @@ export default function Home() {
         </section>
 
         <section id="projects" className="scroll-mt-24 border-b py-16">
-          <h2 className="text-2xl font-semibold">Projects</h2>
-          <p className="mt-4 max-w-3xl text-muted-foreground"></p>
+          <div className="space-y-3">
+            <h2 className="text-3xl font-semibold tracking-tight">Projects</h2>
+            <div className="h-1 w-16 bg-primary" />
+          </div>
+
+          <div className="mt-10 space-y-8">
+            {projectCards.map((project) => (
+              <GlowCard
+                key={project.title}
+                customSize
+                glowColor="blue"
+                className="w-full rounded-[28px] bg-[#151515] px-6 py-6 md:px-8 md:py-8"
+              >
+                <div className="grid gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
+                  <div className="flex flex-col items-center gap-4">
+                    <div className="relative h-32 w-32 overflow-hidden rounded-xl border border-white/10 bg-[#1f1f1f]">
+                      <Image
+                        src={project.imageSrc}
+                        alt={project.imageAlt}
+                        fill
+                        sizes="128px"
+                        className="object-cover"
+                      />
+                    </div>
+
+                    <Link
+                      href={project.githubHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${project.title} GitHub source`}
+                      className="inline-flex"
+                    >
+                      <span className="inline-flex h-9 items-center gap-2 rounded-xl border border-white/16 px-4 text-sm font-medium text-zinc-200 transition-colors hover:border-white/30 hover:bg-white/6 hover:text-white">
+                        <GithubIcon />
+                        <span>GitHub</span>
+                      </span>
+                    </Link>
+                  </div>
+
+                  <div className="space-y-5">
+                    <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                      <div className="space-y-2">
+                        {project.href ? (
+                          <Link
+                            href={project.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block max-w-4xl text-2xl font-semibold tracking-tight text-foreground underline-offset-4 hover:underline md:text-3xl"
+                          >
+                            {project.title}
+                          </Link>
+                        ) : (
+                          <h3 className="max-w-4xl text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                            {project.title}
+                          </h3>
+                        )}
+                      </div>
+
+                      <p className="shrink-0 rounded-md bg-white/6 px-3 py-1 text-sm text-muted-foreground">
+                        {project.period}
+                      </p>
+                    </div>
+
+                    <p className="max-w-4xl text-justify text-lg leading-9 text-white">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-3">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-white/12 bg-white/4 px-4 py-1.5 text-sm text-zinc-200"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </GlowCard>
+            ))}
+          </div>
         </section>
 
         <section id="education" className="scroll-mt-24 border-b py-16">
