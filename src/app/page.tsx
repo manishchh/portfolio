@@ -361,9 +361,10 @@ export default function Home() {
                       <Image
                         src={project.imageSrc}
                         alt={project.imageAlt}
-                        fill
-                        sizes="128px"
-                        className="object-cover"
+                        width={128}
+                        height={128}
+                        unoptimized
+                        className="h-full w-full object-cover"
                       />
                     </div>
 
