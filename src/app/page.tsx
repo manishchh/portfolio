@@ -22,7 +22,7 @@ const profileLinks = {
   github: "https://github.com/manishchh",
   linkedin: "https://www.linkedin.com/in/manish-chhetri1/",
   email: "mailto:chhetrim901@gmail.com",
-  resume: "/Resume.pdf",
+  resume: "/Manish_SWE_Resume.pdf",
 };
 
 const navItems = [
