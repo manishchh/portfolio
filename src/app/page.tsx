@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FileText, Mail, MapPin } from "lucide-react";
 
 import { LocationTag } from "@/components/ui/location-tag";
+import MagneticTabs from "@/components/ui/magnetic-tabs";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import { Text_03 } from "@/components/ui/wave-text";
 
@@ -12,6 +13,18 @@ const profileLinks = {
   email: "mailto:chhetrim901@gmail.com",
   resume: "/Resume.pdf",
 };
+
+const navItems = [
+  { value: "about", label: "About", href: "#about" },
+  { value: "education", label: "Education", href: "#education" },
+  { value: "projects", label: "Projects", href: "#projects" },
+  { value: "experience", label: "Experience", href: "#experience" },
+  {
+    value: "leadership-activities",
+    label: "Leadership",
+    href: "#leadership-activities",
+  },
+];
 
 const socialItems = [
   {
@@ -69,21 +82,12 @@ function LinkedinIcon() {
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="border-b">
-        <nav className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
-          <a href="#about" className="text-lg font-semibold">
-            Your Name
-          </a>
-
-          <div className="flex flex-wrap gap-4 text-sm">
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#other">Other</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </nav>
+      <header className="sticky top-0 z-50 px-6 py-4">
+        <MagneticTabs
+          items={navItems}
+          defaultValue="about"
+          className="mx-auto max-w-6xl"
+        />
       </header>
 
       <main className="mx-auto flex max-w-6xl flex-col px-6 py-4 md:py-6">
@@ -135,6 +139,7 @@ export default function Home() {
                   src="/profile.jpg"
                   alt="Profile photo"
                   fill
+                  sizes="(max-width: 1023px) 100vw, 360px"
                   className="object-cover"
                   priority
                 />
@@ -323,13 +328,11 @@ export default function Home() {
           <p className="mt-4 max-w-3xl text-muted-foreground"></p>
         </section>
 
-        <section id="other" className="scroll-mt-24 border-b py-16">
-          <h2 className="text-2xl font-semibold">Other</h2>
-          <p className="mt-4 max-w-3xl text-muted-foreground"></p>
-        </section>
-
-        <section id="contact" className="scroll-mt-24 py-16">
-          <h2 className="text-2xl font-semibold">Contact</h2>
+        <section
+          id="leadership-activities"
+          className="scroll-mt-24 border-b py-16"
+        >
+          <h2 className="text-2xl font-semibold">Leadership & Activities</h2>
           <p className="mt-4 max-w-3xl text-muted-foreground"></p>
         </section>
       </main>
