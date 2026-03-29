@@ -2,8 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { FileText, Mail, MapPin } from "lucide-react";
 
+import { ButtonBorder } from "@/components/ui/button-border";
 import { LocationTag } from "@/components/ui/location-tag";
 import MagneticTabs from "@/components/ui/magnetic-tabs";
+import { PlasticButton } from "@/components/ui/plastic-button";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import { Text_03 } from "@/components/ui/wave-text";
 
@@ -59,6 +61,7 @@ const projectCards = [
     period: "Jan 2026 - Feb 2026",
     href: "https://chatify-7o49d.sevalla.app/login",
     githubHref: "https://github.com/manishchh/chatify",
+    liveDemo: true,
     description:
       "Built Chatify as a personal MERN-stack project to better understand how real-time messaging systems and authentication work in practice. Developed the web socket functionality from scratch using Socket.IO, implemented authentication with JWT and bcrypt, and added rate limiting and bot detection to improve security. Also tested and validated API endpoints with Postman to ensure the application worked reliably.",
     tags: [
@@ -371,30 +374,31 @@ export default function Home() {
                       aria-label={`${project.title} GitHub source`}
                       className="inline-flex"
                     >
-                      <span className="inline-flex h-9 items-center gap-2 rounded-xl border border-white/16 px-4 text-sm font-medium text-zinc-200 transition-colors hover:border-white/30 hover:bg-white/6 hover:text-white">
+                      <ButtonBorder className="h-9 gap-2 px-4">
                         <GithubIcon />
                         <span>GitHub</span>
-                      </span>
+                      </ButtonBorder>
                     </Link>
                   </div>
 
                   <div className="space-y-5">
                     <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                       <div className="space-y-2">
-                        {project.href ? (
-                          <Link
-                            href={project.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block max-w-4xl text-2xl font-semibold tracking-tight text-foreground underline-offset-4 hover:underline md:text-3xl"
-                          >
-                            {project.title}
-                          </Link>
-                        ) : (
+                        <div className="flex flex-wrap items-center gap-3">
                           <h3 className="max-w-4xl text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
                             {project.title}
                           </h3>
-                        )}
+                          {project.liveDemo && project.href ? (
+                            <Link
+                              href={project.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex"
+                            >
+                              <PlasticButton text="Live Demo" />
+                            </Link>
+                          ) : null}
+                        </div>
                       </div>
 
                       <p className="shrink-0 rounded-md bg-white/6 px-3 py-1 text-sm text-muted-foreground">
@@ -563,8 +567,86 @@ export default function Home() {
           id="leadership-activities"
           className="scroll-mt-24 py-16"
         >
-          <h2 className="text-2xl font-semibold">Leadership & Activities</h2>
-          <p className="mt-4 max-w-3xl text-muted-foreground"></p>
+          <div className="space-y-3">
+            <h2 className="text-3xl font-semibold tracking-tight">
+              Leadership & Activities
+            </h2>
+            <div className="h-1 w-16 bg-primary" />
+          </div>
+
+          <div className="mt-10 space-y-8">
+            <GlowCard
+              customSize
+              glowColor="blue"
+              className="w-full rounded-[28px] bg-[#151515] px-6 py-6 md:px-8 md:py-8"
+            >
+              <div className="grid gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
+                <div className="relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-xl border border-white/20 bg-zinc-950">
+                  <Image
+                    src="/cpc.png"
+                    alt="Competitive Programming Club logo"
+                    width={112}
+                    height={112}
+                    className="h-full w-full object-contain p-2"
+                  />
+                </div>
+
+                <div className="space-y-5">
+                  <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                    <div className="space-y-2">
+                      <h3 className="max-w-4xl text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                        Competitive Programming Club
+                      </h3>
+                    </div>
+
+                    <p className="shrink-0 text-lg text-muted-foreground">
+                      Feb 2025 - Present
+                    </p>
+                  </div>
+
+                  <p className="max-w-4xl text-justify text-lg leading-9 text-white">                  
+                    I enjoy taking part in competitive programming contests through the University of Adelaide’s Competitive Programming Club, as they give me the opportunity to work with other programmers and keep improving my problem-solving skills.
+                  </p>
+                </div>
+              </div>
+            </GlowCard>
+
+            <GlowCard
+              customSize
+              glowColor="blue"
+              className="w-full rounded-[28px] bg-[#151515] px-6 py-6 md:px-8 md:py-8"
+            >
+              <div className="grid gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
+                <div className="relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-xl border border-white/80 bg-white">
+                  <Image
+                    src="/unsia.png"
+                    alt="Uni Mentor graphic"
+                    width={112}
+                    height={112}
+                    className="h-full w-full object-contain p-2"
+                  />
+                </div>
+
+                <div className="space-y-5">
+                  <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                    <div className="space-y-2">
+                      <h3 className="max-w-4xl text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                        Uni Mentor
+                      </h3>
+                    </div>
+
+                    <p className="shrink-0 text-lg text-muted-foreground">
+                      Feb 2024 - Nov 2024
+                    </p>
+                  </div>
+
+                  <p className="max-w-4xl text-justify text-lg leading-9 text-white">
+                    Served as a university mentor for 40+ first-year students, supporting their transition into university through academic guidance, campus resource navigation, and peer mentoring during orientation and semester activities. This role helped me strengthen my communication and leadership skills while fostering an inclusive environment.
+                  </p>
+                </div>
+              </div>
+            </GlowCard>
+          </div>
         </section>
 
         <footer className="flex flex-col items-center justify-center gap-5 py-10 text-center">
