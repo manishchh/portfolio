@@ -21,7 +21,7 @@ const navItems = [
   { value: "experience", label: "Experience", href: "#experience" },
   {
     value: "leadership-activities",
-    label: "Leadership",
+    label: "Leadership & Activities",
     href: "#leadership-activities",
   },
 ];
