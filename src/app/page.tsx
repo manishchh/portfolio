@@ -175,7 +175,7 @@ export default function Home() {
       <main className="mx-auto flex max-w-6xl flex-col px-6 py-4 md:py-6">
         <section
           id="about"
-          className="grid min-h-[68vh] scroll-mt-24 gap-10 border-b py-8 lg:grid-cols-[360px_minmax(0,1fr)] lg:items-start lg:gap-16 lg:py-12"
+          className="grid scroll-mt-24 gap-10 border-b py-8 lg:grid-cols-[360px_minmax(0,1fr)] lg:items-start lg:gap-16 lg:py-12"
         >
           <div className="order-2 space-y-6 lg:order-2">
             <div className="space-y-3">
