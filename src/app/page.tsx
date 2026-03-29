@@ -1,11 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FileText, Mail, MapPin } from "lucide-react";
+import { FileText, Mail, MapPin, Menu } from "lucide-react";
 
 import { ButtonBorder } from "@/components/ui/button-border";
+import { Button } from "@/components/ui/button";
 import { LocationTag } from "@/components/ui/location-tag";
 import MagneticTabs from "@/components/ui/magnetic-tabs";
 import { PlasticButton } from "@/components/ui/plastic-button";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import { Text_03 } from "@/components/ui/wave-text";
 
@@ -165,11 +174,64 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 px-4 py-3 sm:px-6 sm:py-4">
-        <MagneticTabs
-          items={navItems}
-          defaultValue="about"
-          className="mx-auto max-w-6xl"
-        />
+        <div className="mx-auto hidden max-w-6xl sm:block">
+          <MagneticTabs
+            items={navItems}
+            defaultValue="about"
+            className="mx-auto max-w-6xl"
+          />
+        </div>
+
+        <div className="mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-white/10 bg-[#0f0f0f]/90 px-4 py-3 shadow-[0_10px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:hidden">
+          <Link
+            href="#about"
+            className="text-sm font-semibold uppercase tracking-[0.18em] text-white"
+          >
+            Manish Chhetri
+          </Link>
+
+          <Sheet>
+            <SheetTrigger
+              render={
+                <Button
+                  variant="ghost"
+                  size="icon-sm"
+                  className="rounded-full border border-white/10 bg-white/5 text-white hover:bg-white/10"
+                />
+              }
+            >
+              <Menu className="size-4" />
+              <span className="sr-only">Open navigation menu</span>
+            </SheetTrigger>
+
+            <SheetContent
+              side="right"
+              className="w-[82vw] border-white/10 bg-[#0b0b0b] text-white"
+            >
+              <SheetHeader className="border-b border-white/10 px-6 py-5">
+                <SheetTitle className="text-sm uppercase tracking-[0.18em] text-white">
+                  Navigation
+                </SheetTitle>
+              </SheetHeader>
+
+              <nav className="flex flex-col gap-2 px-4 py-6">
+                {navItems.map((item) => (
+                  <SheetClose
+                    key={item.value}
+                    render={
+                      <Link
+                        href={item.href}
+                        className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-4 text-sm font-medium uppercase tracking-[0.14em] text-zinc-200 transition-colors hover:bg-white/[0.06] hover:text-white"
+                      />
+                    }
+                  >
+                    {item.label}
+                  </SheetClose>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </header>
 
       <main className="mx-auto flex max-w-6xl flex-col px-4 py-3 sm:px-6 sm:py-4 md:py-6">
@@ -185,7 +247,7 @@ export default function Home() {
               <div className="h-1 w-16 bg-primary" />
             </div>
 
-            <div className="max-w-2xl space-y-4 text-justify text-sm leading-8 text-muted-foreground sm:text-base sm:leading-9">
+            <div className="max-w-2xl space-y-4 text-left text-sm leading-8 text-muted-foreground sm:text-justify sm:text-base sm:leading-9">
               <p>
                 I&apos;m a Software Engineering graduate from the University of
                 South Australia, where I completed my Bachelor of Software
@@ -314,7 +376,7 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <p className="max-w-4xl text-justify text-sm leading-8 text-white sm:text-base sm:leading-9 lg:text-lg">
+                  <p className="max-w-4xl text-left text-sm leading-8 text-white sm:text-justify sm:text-base sm:leading-9 lg:text-lg">
                     Worked on an Honours research project with the Centre for Change and Complexity in Learning (C3L) at the University of South Australia to develop an AI-powered grading application for automated assessment evaluation and feedback generation. Integrated an LLM-based grading workflow into an existing Django/Python web application using LangChain, and collaborated with developers and academic stakeholders to refine the system based on real requirements. Through iterative prompt engineering and validation on authentic assessment datasets, improved grading accuracy by 60% and reduced manual grading effort for academic staff.
                   </p>
 
@@ -408,7 +470,7 @@ export default function Home() {
                       </p>
                     </div>
 
-                    <p className="max-w-4xl text-justify text-sm leading-8 text-white sm:text-base sm:leading-9 lg:text-lg">
+                    <p className="max-w-4xl text-left text-sm leading-8 text-white sm:text-justify sm:text-base sm:leading-9 lg:text-lg">
                       {project.description}
                     </p>
 
@@ -485,7 +547,7 @@ export default function Home() {
                       </p>
                     </div>
 
-                    <div className="max-w-4xl space-y-4 text-justify text-sm leading-8 text-white sm:text-base sm:leading-9 lg:text-lg">
+                    <div className="max-w-4xl space-y-4 text-left text-sm leading-8 text-white sm:text-justify sm:text-base sm:leading-9 lg:text-lg">
                       <p>
                         <span className="text-muted-foreground">
                           Relevant Coursework:
@@ -606,7 +668,7 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <p className="max-w-4xl text-justify text-sm leading-8 text-white sm:text-base sm:leading-9 lg:text-lg">                  
+                  <p className="max-w-4xl text-left text-sm leading-8 text-white sm:text-justify sm:text-base sm:leading-9 lg:text-lg">                  
                     I enjoy taking part in competitive programming contests through the University of Adelaide’s Competitive Programming Club, as they give me the opportunity to work with other programmers and keep improving my problem-solving skills.
                   </p>
                 </div>
@@ -642,7 +704,7 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <p className="max-w-4xl text-justify text-sm leading-8 text-white sm:text-base sm:leading-9 lg:text-lg">
+                  <p className="max-w-4xl text-left text-sm leading-8 text-white sm:text-justify sm:text-base sm:leading-9 lg:text-lg">
                     Served as a university mentor for 40+ first-year students, supporting their transition into university through academic guidance, campus resource navigation, and peer mentoring during orientation and semester activities. This role helped me strengthen my communication and leadership skills while fostering an inclusive environment.
                   </p>
                 </div>
