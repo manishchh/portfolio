@@ -16,9 +16,9 @@ const profileLinks = {
 
 const navItems = [
   { value: "about", label: "About", href: "#about" },
-  { value: "education", label: "Education", href: "#education" },
-  { value: "projects", label: "Projects", href: "#projects" },
   { value: "experience", label: "Experience", href: "#experience" },
+  { value: "projects", label: "Projects", href: "#projects" },
+  { value: "education", label: "Education", href: "#education" },
   {
     value: "leadership-activities",
     label: "Leadership & Activities",
@@ -182,6 +182,88 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="experience" className="scroll-mt-24 border-b py-16">
+          <div className="space-y-3">
+            <h2 className="text-3xl font-semibold tracking-tight">
+              Work Experience
+            </h2>
+            <div className="h-1 w-16 bg-primary" />
+          </div>
+
+          <div className="mt-10">
+            <GlowCard
+              customSize
+              glowColor="blue"
+              className="w-full rounded-[28px] bg-[#151515] px-6 py-6 md:px-8 md:py-8"
+            >
+              <div className="grid gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
+                <div className="flex h-28 w-28 items-center justify-center border border-white/80 bg-white transition-opacity hover:opacity-90">
+                  <Image
+                    src="/c3l.png"
+                    alt="C3L logo"
+                    width={112}
+                    height={112}
+                    className="h-full w-full object-contain p-2"
+                  />
+                </div>
+
+                <div className="space-y-5">
+                  <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                    <div className="space-y-2">
+                      <p className="max-w-3xl text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                        Software Engineering (Honours Research Project)
+                      </p>
+                      <Link
+                        href="https://adelaideuni.edu.au/research/centre-for-change-and-complexity-in-learning/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block max-w-3xl text-xl font-medium leading-9 text-foreground underline-offset-4 hover:underline"
+                      >
+                        C3L, University of South Australia
+                      </Link>
+                      <div className="flex items-center gap-2 text-base text-muted-foreground">
+                        <MapPin className="size-4 text-primary" />
+                        <span>Adelaide, Australia</span>
+                      </div>
+                    </div>
+
+                    <p className="shrink-0 text-lg text-muted-foreground">
+                      Aug 2024 - Jun 2025
+                    </p>
+                  </div>
+
+                  <p className="max-w-4xl text-justify text-lg leading-9 text-white">
+                    Worked on an Honours research project with the Centre for Change and Complexity in Learning (C3L) at the University of South Australia to develop an AI-powered grading application for automated assessment evaluation and feedback generation. Integrated an LLM-based grading workflow into an existing Django/Python web application using LangChain, and collaborated with developers and academic stakeholders to refine the system based on real requirements. Through iterative prompt engineering and validation on authentic assessment datasets, improved grading accuracy by 60% and reduced manual grading effort for academic staff.
+                  </p>
+
+                  <div className="flex flex-wrap gap-3">
+                    <span className="rounded-full border border-white/12 bg-white/4 px-4 py-1.5 text-sm text-zinc-200">
+                      Python
+                    </span>
+                    <span className="rounded-full border border-white/12 bg-white/4 px-4 py-1.5 text-sm text-zinc-200">
+                      Django
+                    </span>
+                    <span className="rounded-full border border-white/12 bg-white/4 px-4 py-1.5 text-sm text-zinc-200">
+                      JavaScript
+                    </span>
+                    <span className="rounded-full border border-white/12 bg-white/4 px-4 py-1.5 text-sm text-zinc-200">
+                      OpenAI API
+                    </span>
+                    <span className="rounded-full border border-white/12 bg-white/4 px-4 py-1.5 text-sm text-zinc-200">
+                      Langchain
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </GlowCard>
+          </div>
+        </section>
+
+        <section id="projects" className="scroll-mt-24 border-b py-16">
+          <h2 className="text-2xl font-semibold">Projects</h2>
+          <p className="mt-4 max-w-3xl text-muted-foreground"></p>
+        </section>
+
         <section id="education" className="scroll-mt-24 border-b py-16">
           <div className="space-y-3">
             <h2 className="text-3xl font-semibold tracking-tight">Education</h2>
@@ -313,28 +395,52 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-              </div>
+                </div>
             </GlowCard>
           </div>
         </section>
 
-        <section id="projects" className="scroll-mt-24 border-b py-16">
-          <h2 className="text-2xl font-semibold">Projects</h2>
-          <p className="mt-4 max-w-3xl text-muted-foreground"></p>
-        </section>
-
-        <section id="experience" className="scroll-mt-24 border-b py-16">
-          <h2 className="text-2xl font-semibold">Work Experience</h2>
-          <p className="mt-4 max-w-3xl text-muted-foreground"></p>
-        </section>
-
         <section
           id="leadership-activities"
-          className="scroll-mt-24 border-b py-16"
+          className="scroll-mt-24 py-16"
         >
           <h2 className="text-2xl font-semibold">Leadership & Activities</h2>
           <p className="mt-4 max-w-3xl text-muted-foreground"></p>
         </section>
+
+        <footer className="flex flex-col items-center justify-center gap-5 py-10 text-center">
+          <div className="flex items-center justify-center gap-5 text-zinc-200">
+            <Link
+              href={profileLinks.email}
+              aria-label="Email"
+              className="transition-colors hover:text-white"
+            >
+              <Mail className="size-5" />
+            </Link>
+            <Link
+              href={profileLinks.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="transition-colors hover:text-white"
+            >
+              <GithubIcon />
+            </Link>
+            <Link
+              href={profileLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="transition-colors hover:text-white"
+            >
+              <LinkedinIcon />
+            </Link>
+          </div>
+
+          <p className="text-lg text-zinc-400">
+            2026 <span className="px-2 text-zinc-600">•</span> Manish Chhetri
+          </p>
+        </footer>
       </main>
     </div>
   );
