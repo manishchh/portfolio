@@ -218,6 +218,7 @@ export default function Home() {
                 {navItems.map((item) => (
                   <SheetClose
                     key={item.value}
+                    nativeButton={false}
                     render={
                       <Link
                         href={item.href}
