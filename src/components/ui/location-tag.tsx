@@ -39,7 +39,7 @@ export function LocationTag({
       type="button"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 transition-all duration-500 ease-out hover:border-white/20 hover:bg-white/8 hover:shadow-[0_0_20px_rgba(255,255,255,0.03)]"
+      className="group relative flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs transition-all duration-500 ease-out hover:border-white/20 hover:bg-white/8 hover:shadow-[0_0_20px_rgba(255,255,255,0.03)] sm:gap-3 sm:px-4 sm:py-2.5 sm:text-sm"
     >
       <div className="relative flex items-center justify-center">
         <span className="relative flex h-2 w-2">
@@ -50,7 +50,7 @@ export function LocationTag({
 
       <div className="flex items-center gap-2 overflow-hidden">
         <span
-          className="text-sm font-medium text-white transition-all duration-500"
+          className="text-xs font-medium text-white transition-all duration-500 sm:text-sm"
           style={{
             transform: isHovered ? "translateY(-100%)" : "translateY(0)",
             opacity: isHovered ? 0 : 1,
@@ -60,7 +60,7 @@ export function LocationTag({
         </span>
 
         <span
-          className="absolute left-11 text-sm font-medium text-white transition-all duration-500"
+          className="absolute left-10 text-xs font-medium text-white transition-all duration-500 sm:left-11 sm:text-sm"
           style={{
             transform: isHovered ? "translateY(0)" : "translateY(100%)",
             opacity: isHovered ? 1 : 0,

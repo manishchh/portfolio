@@ -164,7 +164,7 @@ function LinkedinIcon() {
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 px-6 py-4">
+      <header className="sticky top-0 z-50 px-4 py-3 sm:px-6 sm:py-4">
         <MagneticTabs
           items={navItems}
           defaultValue="about"
@@ -172,20 +172,20 @@ export default function Home() {
         />
       </header>
 
-      <main className="mx-auto flex max-w-6xl flex-col px-6 py-4 md:py-6">
+      <main className="mx-auto flex max-w-6xl flex-col px-4 py-3 sm:px-6 sm:py-4 md:py-6">
         <section
           id="about"
-          className="grid scroll-mt-24 gap-10 border-b py-8 lg:grid-cols-[360px_minmax(0,1fr)] lg:items-start lg:gap-16 lg:py-12"
+          className="grid scroll-mt-24 gap-8 border-b py-6 sm:gap-10 sm:py-8 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start lg:gap-14 lg:py-12 xl:grid-cols-[360px_minmax(0,1fr)] xl:gap-16"
         >
           <div className="order-2 space-y-6 lg:order-2">
             <div className="space-y-3">
-              <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+              <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl md:text-4xl">
                 About Me
               </h2>
               <div className="h-1 w-16 bg-primary" />
             </div>
 
-            <div className="max-w-2xl space-y-4 text-justify text-base leading-9 text-muted-foreground">
+            <div className="max-w-2xl space-y-4 text-justify text-sm leading-8 text-muted-foreground sm:text-base sm:leading-9">
               <p>
                 I&apos;m a Software Engineering graduate from the University of
                 South Australia, where I completed my Bachelor of Software
@@ -215,23 +215,23 @@ export default function Home() {
           </div>
 
           <div className="order-1 lg:order-1">
-            <div className="mx-auto flex max-w-sm flex-col rounded-[32px] border border-white/8 bg-[radial-gradient(circle_at_top,_rgba(145,94,255,0.14),_transparent_38%),linear-gradient(180deg,_rgba(255,255,255,0.03),_rgba(255,255,255,0.01))] p-6 shadow-[0_28px_80px_rgba(0,0,0,0.38)]">
+            <div className="mx-auto flex w-full max-w-sm flex-col rounded-[28px] border border-white/8 bg-[radial-gradient(circle_at_top,_rgba(145,94,255,0.14),_transparent_38%),linear-gradient(180deg,_rgba(255,255,255,0.03),_rgba(255,255,255,0.01))] p-4 shadow-[0_28px_80px_rgba(0,0,0,0.38)] sm:rounded-[32px] sm:p-6">
               <div className="relative aspect-[4/4.8] overflow-hidden rounded-[26px] bg-[#202020]">
                 <Image
                   src="/profile.jpg"
                   alt="Profile photo"
                   fill
-                  sizes="(max-width: 1023px) 100vw, 360px"
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 340px, 360px"
                   className="object-cover"
                   priority
                 />
               </div>
 
-              <div className="space-y-2 px-2 pt-6 text-center">
-                <h3 className="text-4xl font-semibold tracking-tight text-white">
+              <div className="space-y-2 px-2 pt-5 text-center sm:pt-6">
+                <h3 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                   Manish Chhetri
                 </h3>
-                <p className="text-xl text-zinc-300">
+                <p className="text-lg text-zinc-300 sm:text-xl">
                   Aspiring Software Engineer
                 </p>
                 <div className="flex justify-center pt-2">
@@ -243,7 +243,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-center gap-3 px-2 pb-2 pt-6">
+              <div className="flex items-center justify-center gap-2 px-2 pb-2 pt-5 sm:gap-3 sm:pt-6">
                 {socialItems.map((item) => (
                   <Link
                     key={item.label}
@@ -251,9 +251,9 @@ export default function Home() {
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
                     aria-label={item.label}
-                    className="group relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-transparent text-zinc-400 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/6 hover:text-white"
+                    className="group relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-transparent text-zinc-400 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/6 hover:text-white sm:h-12 sm:w-12"
                   >
-                    <span className="pointer-events-none absolute -top-12 rounded-2xl border border-white/10 bg-[#171717] px-4 py-2 text-sm font-medium text-white opacity-0 shadow-[0_12px_24px_rgba(0,0,0,0.35)] transition-all duration-200 group-hover:-translate-y-1 group-hover:opacity-100">
+                    <span className="pointer-events-none absolute -top-11 rounded-2xl border border-white/10 bg-[#171717] px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-[0_12px_24px_rgba(0,0,0,0.35)] transition-all duration-200 group-hover:-translate-y-1 group-hover:opacity-100 sm:-top-12 sm:px-4 sm:py-2 sm:text-sm">
                       {item.label}
                     </span>
                     {item.icon}
@@ -264,9 +264,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="experience" className="scroll-mt-24 border-b py-16">
+        <section id="experience" className="scroll-mt-24 border-b py-12 sm:py-16">
           <div className="space-y-3">
-            <h2 className="text-3xl font-semibold tracking-tight">
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
               Work Experience
             </h2>
             <div className="h-1 w-16 bg-primary" />
@@ -276,10 +276,10 @@ export default function Home() {
             <GlowCard
               customSize
               glowColor="blue"
-              className="w-full rounded-[28px] bg-[#151515] px-6 py-6 md:px-8 md:py-8"
+              className="w-full rounded-[28px] bg-[#151515] px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8"
             >
-              <div className="grid gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
-                <div className="flex h-28 w-28 items-center justify-center border border-white/80 bg-white transition-opacity hover:opacity-90">
+              <div className="grid gap-5 sm:gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
+                <div className="flex h-24 w-24 items-center justify-center border border-white/80 bg-white transition-opacity hover:opacity-90 sm:h-28 sm:w-28">
                   <Image
                     src="/c3l.png"
                     alt="C3L logo"
@@ -292,14 +292,14 @@ export default function Home() {
                 <div className="space-y-5">
                   <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                     <div className="space-y-2">
-                      <p className="max-w-3xl text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                      <p className="max-w-3xl text-xl font-semibold tracking-tight text-foreground sm:text-2xl md:text-3xl">
                         Software Engineering (Honours Research Project)
                       </p>
                       <Link
                         href="https://adelaideuni.edu.au/research/centre-for-change-and-complexity-in-learning/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block max-w-3xl text-xl font-medium leading-9 text-foreground underline-offset-4 hover:underline"
+                        className="inline-block max-w-3xl text-lg font-medium leading-8 text-foreground underline-offset-4 hover:underline sm:text-xl sm:leading-9"
                       >
                         C3L, University of South Australia
                       </Link>
@@ -309,12 +309,12 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <p className="shrink-0 text-lg text-muted-foreground">
+                    <p className="shrink-0 text-sm text-muted-foreground sm:text-lg">
                       Aug 2024 - Jun 2025
                     </p>
                   </div>
 
-                  <p className="max-w-4xl text-justify text-lg leading-9 text-white">
+                  <p className="max-w-4xl text-justify text-sm leading-8 text-white sm:text-base sm:leading-9 lg:text-lg">
                     Worked on an Honours research project with the Centre for Change and Complexity in Learning (C3L) at the University of South Australia to develop an AI-powered grading application for automated assessment evaluation and feedback generation. Integrated an LLM-based grading workflow into an existing Django/Python web application using LangChain, and collaborated with developers and academic stakeholders to refine the system based on real requirements. Through iterative prompt engineering and validation on authentic assessment datasets, improved grading accuracy by 60% and reduced manual grading effort for academic staff.
                   </p>
 
@@ -341,9 +341,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="projects" className="scroll-mt-24 border-b py-16">
+        <section id="projects" className="scroll-mt-24 border-b py-12 sm:py-16">
           <div className="space-y-3">
-            <h2 className="text-3xl font-semibold tracking-tight">Projects</h2>
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Projects</h2>
             <div className="h-1 w-16 bg-primary" />
           </div>
 
@@ -353,17 +353,18 @@ export default function Home() {
                 key={project.title}
                 customSize
                 glowColor="blue"
-                className="w-full rounded-[28px] bg-[#151515] px-6 py-6 md:px-8 md:py-8"
+                className="w-full rounded-[28px] bg-[#151515] px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8"
               >
-                <div className="grid gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="relative h-32 w-32 overflow-hidden rounded-xl border border-white/10 bg-[#1f1f1f]">
+                <div className="grid gap-5 sm:gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
+                  <div className="flex flex-col items-center gap-3 sm:gap-4">
+                    <div className="relative h-24 w-24 overflow-hidden rounded-xl border border-white/10 bg-[#1f1f1f] sm:h-32 sm:w-32">
                       <Image
                         src={project.imageSrc}
                         alt={project.imageAlt}
                         width={128}
                         height={128}
                         unoptimized
+                        sizes="(max-width: 639px) 96px, 128px"
                         className="h-full w-full object-cover"
                       />
                     </div>
@@ -375,7 +376,7 @@ export default function Home() {
                       aria-label={`${project.title} GitHub source`}
                       className="inline-flex"
                     >
-                      <ButtonBorder className="h-9 gap-2 px-4">
+                      <ButtonBorder className="h-8 gap-2 px-3 text-xs sm:h-9 sm:px-4 sm:text-sm">
                         <GithubIcon />
                         <span>GitHub</span>
                       </ButtonBorder>
@@ -386,7 +387,7 @@ export default function Home() {
                     <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                       <div className="space-y-2">
                         <div className="flex flex-wrap items-center gap-3">
-                          <h3 className="max-w-4xl text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                          <h3 className="max-w-4xl text-xl font-semibold tracking-tight text-foreground sm:text-2xl md:text-3xl">
                             {project.title}
                           </h3>
                           {project.liveDemo && project.href ? (
@@ -402,12 +403,12 @@ export default function Home() {
                         </div>
                       </div>
 
-                      <p className="shrink-0 rounded-md bg-white/6 px-3 py-1 text-sm text-muted-foreground">
+                      <p className="shrink-0 rounded-md bg-white/6 px-3 py-1 text-xs text-muted-foreground sm:text-sm">
                         {project.period}
                       </p>
                     </div>
 
-                    <p className="max-w-4xl text-justify text-lg leading-9 text-white">
+                    <p className="max-w-4xl text-justify text-sm leading-8 text-white sm:text-base sm:leading-9 lg:text-lg">
                       {project.description}
                     </p>
 
@@ -415,7 +416,7 @@ export default function Home() {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full border border-white/12 bg-white/4 px-4 py-1.5 text-sm text-zinc-200"
+                        className="rounded-full border border-white/12 bg-white/4 px-3 py-1.5 text-xs text-zinc-200 sm:px-4 sm:text-sm"
                         >
                           {tag}
                         </span>
@@ -428,9 +429,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="education" className="scroll-mt-24 border-b py-16">
+        <section id="education" className="scroll-mt-24 border-b py-12 sm:py-16">
           <div className="space-y-3">
-            <h2 className="text-3xl font-semibold tracking-tight">Education</h2>
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Education</h2>
             <div className="h-1 w-16 bg-primary" />
           </div>
 
@@ -438,14 +439,14 @@ export default function Home() {
             <GlowCard
               customSize
               glowColor="blue"
-              className="w-full rounded-[28px] bg-[#151515] px-6 py-6 md:px-8 md:py-8"
+              className="w-full rounded-[28px] bg-[#151515] px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8"
             >
-                <div className="grid gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
+                <div className="grid gap-5 sm:gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
                   <Link
                     href="https://unisa.edu.au/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-28 w-28 items-center justify-center border border-white/80 bg-white transition-opacity hover:opacity-90"
+                    className="flex h-24 w-24 items-center justify-center border border-white/80 bg-white transition-opacity hover:opacity-90 sm:h-28 sm:w-28"
                   >
                     <Image
                       src="/unsia.png"
@@ -467,10 +468,10 @@ export default function Home() {
                         >
                           <Text_03
                             text="University of South Australia"
-                            className="text-left text-2xl font-semibold tracking-tight text-foreground md:text-3xl"
+                            className="text-left text-xl font-semibold tracking-tight text-foreground sm:text-2xl md:text-3xl"
                           />
                         </Link>
-                        <p className="max-w-3xl text-xl font-medium leading-9 text-foreground">
+                        <p className="max-w-3xl text-lg font-medium leading-8 text-foreground sm:text-xl sm:leading-9">
                           Bachelor of Software Engineering (Honours)
                         </p>
                         <div className="flex items-center gap-2 text-base text-muted-foreground">
@@ -479,12 +480,12 @@ export default function Home() {
                         </div>
                       </div>
 
-                      <p className="shrink-0 text-lg text-muted-foreground">
+                      <p className="shrink-0 text-sm text-muted-foreground sm:text-lg">
                         2022 - 2025
                       </p>
                     </div>
 
-                    <div className="max-w-4xl space-y-4 text-justify text-lg leading-9 text-white">
+                    <div className="max-w-4xl space-y-4 text-justify text-sm leading-8 text-white sm:text-base sm:leading-9 lg:text-lg">
                       <p>
                         <span className="text-muted-foreground">
                           Relevant Coursework:
@@ -513,14 +514,14 @@ export default function Home() {
             <GlowCard
               customSize
               glowColor="blue"
-              className="w-full rounded-[28px] bg-[#151515] px-6 py-6 md:px-8 md:py-8"
+              className="w-full rounded-[28px] bg-[#151515] px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8"
             >
-              <div className="grid gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
+              <div className="grid gap-5 sm:gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
                 <Link
                   href="https://www.saibt.sa.edu.au/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-28 w-28 items-center justify-center border border-white/80 bg-white transition-opacity hover:opacity-90"
+                  className="flex h-24 w-24 items-center justify-center border border-white/80 bg-white transition-opacity hover:opacity-90 sm:h-28 sm:w-28"
                 >
                   <Image
                     src="/saibt.png"
@@ -542,10 +543,10 @@ export default function Home() {
                         >
                           <Text_03
                             text="South Australian Institute of Business andTechnology (SAIBT)"
-                            className="text-left text-2xl font-semibold leading-tight tracking-tight text-foreground md:text-3xl"
+                            className="text-left text-xl font-semibold leading-tight tracking-tight text-foreground sm:text-2xl md:text-3xl"
                           />
                         </Link>
-                      <p className="max-w-3xl text-xl font-medium leading-9 text-foreground">
+                      <p className="max-w-3xl text-lg font-medium leading-8 text-foreground sm:text-xl sm:leading-9">
                         Diploma of Information Technology (IT)
                       </p>
                       <div className="flex items-center gap-2 text-base text-muted-foreground">
@@ -554,7 +555,7 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <p className="shrink-0 text-lg text-muted-foreground">
+                    <p className="shrink-0 text-sm text-muted-foreground sm:text-lg">
                       2021 - 2022
                     </p>
                   </div>
@@ -566,10 +567,10 @@ export default function Home() {
 
         <section
           id="leadership-activities"
-          className="scroll-mt-24 py-16"
+          className="scroll-mt-24 py-12 sm:py-16"
         >
           <div className="space-y-3">
-            <h2 className="text-3xl font-semibold tracking-tight">
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
               Leadership & Activities
             </h2>
             <div className="h-1 w-16 bg-primary" />
@@ -579,10 +580,10 @@ export default function Home() {
             <GlowCard
               customSize
               glowColor="blue"
-              className="w-full rounded-[28px] bg-[#151515] px-6 py-6 md:px-8 md:py-8"
+              className="w-full rounded-[28px] bg-[#151515] px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8"
             >
-              <div className="grid gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
-                <div className="relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-xl border border-white/20 bg-zinc-950">
+              <div className="grid gap-5 sm:gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
+                <div className="relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-xl border border-white/20 bg-zinc-950 sm:h-28 sm:w-28">
                   <Image
                     src="/cpc.png"
                     alt="Competitive Programming Club logo"
@@ -595,17 +596,17 @@ export default function Home() {
                 <div className="space-y-5">
                   <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                     <div className="space-y-2">
-                      <h3 className="max-w-4xl text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                      <h3 className="max-w-4xl text-xl font-semibold tracking-tight text-foreground sm:text-2xl md:text-3xl">
                         Competitive Programming Club
                       </h3>
                     </div>
 
-                    <p className="shrink-0 text-lg text-muted-foreground">
+                    <p className="shrink-0 text-sm text-muted-foreground sm:text-lg">
                       Feb 2025 - Present
                     </p>
                   </div>
 
-                  <p className="max-w-4xl text-justify text-lg leading-9 text-white">                  
+                  <p className="max-w-4xl text-justify text-sm leading-8 text-white sm:text-base sm:leading-9 lg:text-lg">                  
                     I enjoy taking part in competitive programming contests through the University of Adelaide’s Competitive Programming Club, as they give me the opportunity to work with other programmers and keep improving my problem-solving skills.
                   </p>
                 </div>
@@ -615,10 +616,10 @@ export default function Home() {
             <GlowCard
               customSize
               glowColor="blue"
-              className="w-full rounded-[28px] bg-[#151515] px-6 py-6 md:px-8 md:py-8"
+              className="w-full rounded-[28px] bg-[#151515] px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8"
             >
-              <div className="grid gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
-                <div className="relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-xl border border-white/80 bg-white">
+              <div className="grid gap-5 sm:gap-6 md:grid-cols-[140px_minmax(0,1fr)]">
+                <div className="relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-xl border border-white/80 bg-white sm:h-28 sm:w-28">
                   <Image
                     src="/unsia.png"
                     alt="Uni Mentor graphic"
@@ -631,17 +632,17 @@ export default function Home() {
                 <div className="space-y-5">
                   <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                     <div className="space-y-2">
-                      <h3 className="max-w-4xl text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                      <h3 className="max-w-4xl text-xl font-semibold tracking-tight text-foreground sm:text-2xl md:text-3xl">
                         Uni Mentor
                       </h3>
                     </div>
 
-                    <p className="shrink-0 text-lg text-muted-foreground">
+                    <p className="shrink-0 text-sm text-muted-foreground sm:text-lg">
                       Feb 2024 - Nov 2024
                     </p>
                   </div>
 
-                  <p className="max-w-4xl text-justify text-lg leading-9 text-white">
+                  <p className="max-w-4xl text-justify text-sm leading-8 text-white sm:text-base sm:leading-9 lg:text-lg">
                     Served as a university mentor for 40+ first-year students, supporting their transition into university through academic guidance, campus resource navigation, and peer mentoring during orientation and semester activities. This role helped me strengthen my communication and leadership skills while fostering an inclusive environment.
                   </p>
                 </div>
@@ -650,8 +651,8 @@ export default function Home() {
           </div>
         </section>
 
-        <footer className="flex flex-col items-center justify-center gap-5 py-10 text-center">
-          <div className="flex items-center justify-center gap-5 text-zinc-200">
+        <footer className="flex flex-col items-center justify-center gap-4 py-8 text-center sm:gap-5 sm:py-10">
+          <div className="flex items-center justify-center gap-4 text-zinc-200 sm:gap-5">
             <Link
               href={profileLinks.email}
               aria-label="Email"
@@ -679,7 +680,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <p className="text-lg text-zinc-400">
+          <p className="text-base text-zinc-400 sm:text-lg">
             2026 <span className="px-2 text-zinc-600">•</span> Manish Chhetri
           </p>
         </footer>

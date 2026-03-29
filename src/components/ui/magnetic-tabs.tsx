@@ -77,7 +77,7 @@ export default function MagneticTabs({
     <div className={cn("flex justify-center", className)}>
       <div
         ref={containerRef}
-        className="relative inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-[#0f0f0f]/90 p-2 shadow-[0_10px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl"
+        className="relative inline-flex max-w-full items-center justify-start gap-1 overflow-x-auto rounded-full border border-white/15 bg-[#0f0f0f]/90 p-1.5 shadow-[0_10px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:justify-center sm:gap-2 sm:p-2"
       >
         <motion.div
           style={{
@@ -106,7 +106,7 @@ export default function MagneticTabs({
             onMouseEnter={() => setHovered(item.value)}
             onMouseLeave={() => setHovered(null)}
             className={cn(
-              "relative z-10 rounded-full px-5 py-3 text-sm font-medium uppercase tracking-wide transition-colors",
+              "relative z-10 shrink-0 whitespace-nowrap rounded-full px-3 py-2 text-[11px] font-medium uppercase tracking-[0.14em] transition-colors sm:px-5 sm:py-3 sm:text-sm sm:tracking-wide",
               active === item.value ? "text-white" : "text-zinc-400 hover:text-white"
             )}
             whileHover={{ scale: 1.04 }}
