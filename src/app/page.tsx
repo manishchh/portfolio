@@ -324,7 +324,7 @@ export default function Home() {
         </section>
 
         <section id="experience" className="scroll-mt-24 border-b py-16">
-          <h2 className="text-2xl font-semibold">Experience</h2>
+          <h2 className="text-2xl font-semibold">Work Experience</h2>
           <p className="mt-4 max-w-3xl text-muted-foreground"></p>
         </section>
 
